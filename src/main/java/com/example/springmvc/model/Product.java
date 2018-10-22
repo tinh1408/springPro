@@ -1,7 +1,6 @@
 package com.example.springmvc.model;
 
 import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.GenericGenerators;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

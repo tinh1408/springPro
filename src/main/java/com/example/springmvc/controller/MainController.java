@@ -1,7 +1,9 @@
 package com.example.springmvc.controller;
 
 import com.example.springmvc.model.Product;
+import com.example.springmvc.model.User;
 import com.example.springmvc.repository.ProductRepository;
+import com.example.springmvc.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,12 +15,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class MainController {
 
     private ProductRepository productRepository;
+    private UserRepository userRepository;
 
-//    long count = productRepository.count();
     @Autowired
-
     public void setProductRepository(ProductRepository productRepository) {
         this.productRepository = productRepository;
+    }
+
+    @Autowired
+    public  void setUserRepository(UserRepository userRepository){
+        this.userRepository = userRepository;
     }
 
     @RequestMapping(path = "/")
@@ -36,6 +42,12 @@ public class MainController {
     public String saveProduct(Product product) {
         productRepository.save(product);
         return "redirect:/products";
+    }
+
+    @RequestMapping(path = "/user", method = RequestMethod.GET)
+    public String getAllUser(Model model){
+        model.addAttribute("user", userRepository.findAll());
+        return "user";
     }
 
     @RequestMapping(path = "/products", method = RequestMethod.GET)
