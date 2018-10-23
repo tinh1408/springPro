@@ -1,7 +1,6 @@
 package com.example.springmvc.controller;
 
 import com.example.springmvc.repository.ProductRepository;
-import com.example.springmvc.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,6 +35,7 @@ public class DefaultController {
         model.addAttribute("products", productRepository.findAll());
         return "products";
     }
+
     @GetMapping("/user")
     public String user() {
         return "/user";
