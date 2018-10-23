@@ -1,4 +1,4 @@
-/*
+
 package com.example.springmvc.controller;
 
 import com.example.springmvc.model.Product;
@@ -15,22 +15,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class MainController {
 
     private ProductRepository productRepository;
-    private UserRepository userRepository;
+//    private UserRepository userRepository;
 
     @Autowired
     public void setProductRepository(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 
-    @Autowired
-    public  void setUserRepository(UserRepository userRepository){
-        this.userRepository = userRepository;
-    }
+//    @Autowired
+//    public  void setUserRepository(UserRepository userRepository){
+//        this.userRepository = userRepository;
+//    }
 
-    @RequestMapping(path = "/")
-    public String index() {
-        return "index";
-    }
+//    @RequestMapping(path = "/")
+//    public String index() {
+//        return "index";
+//    }
 
     @RequestMapping(path = "/products/add", method = RequestMethod.GET)
     public String createProduct(Model model) {
@@ -44,17 +44,17 @@ public class MainController {
         return "redirect:/products";
     }
 
-    @RequestMapping(path = "/user", method = RequestMethod.GET)
-    public String getAllUser(Model model){
-        model.addAttribute("user", userRepository.findAll());
-        return "user";
-    }
+//    @RequestMapping(path = "/user", method = RequestMethod.GET)
+//    public String getAllUser(Model model){
+//        model.addAttribute("user", userRepository.findAll());
+//        return "user";
+//    }
 
-    @RequestMapping(path = "/products", method = RequestMethod.GET)
-    public String getAllProducts(Model model) {
-        model.addAttribute("products", productRepository.findAll());
-        return "products";
-    }
+//    @RequestMapping(path = "/products", method = RequestMethod.GET)
+//    public String getAllProducts(Model model) {
+//        model.addAttribute("products", productRepository.findAll());
+//        return "products";
+//    }
 
     @RequestMapping(path = "/products/edit/{id}", method = RequestMethod.GET)
     public String editProduct(Model model, @PathVariable(value = "id") String id) {
@@ -68,4 +68,4 @@ public class MainController {
         return "redirect:/products";
     }
 }
-*/
+
