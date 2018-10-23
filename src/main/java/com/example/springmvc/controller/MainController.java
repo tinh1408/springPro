@@ -1,7 +1,7 @@
+/*
 package com.example.springmvc.controller;
 
 import com.example.springmvc.model.Product;
-import com.example.springmvc.model.User;
 import com.example.springmvc.repository.ProductRepository;
 import com.example.springmvc.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,3 +68,4 @@ public class MainController {
         return "redirect:/products";
     }
 }
+*/
