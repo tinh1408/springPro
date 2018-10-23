@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head lang="en">
     <title>Products</title>
     <th:block th:include="layout/header"></th:block>
 </head>
 <body>
+
 <div class="container">
+            <span sec:authorize="isAuthenticated()">
+                | Logged user: <span sec:authentication="name"></span> |
+                Roles: <span sec:authentication="principal.authorities"></span> |
+                <a th:href="@{/logout}">Sign Out</a>
+            </span>
     <div th:if="${not #lists.isEmpty(products)}">
         <h2>All Products</h2>
         <table class="table table-striped">
@@ -32,5 +39,7 @@
         </table>
     </div>
 </div>
+
+<div th:replace="fragments/footer :: footer"/>
 </body>
 </html>
