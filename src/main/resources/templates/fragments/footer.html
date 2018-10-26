@@ -1,18 +1,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+>
 <head>
 </head>
 <body>
 <div th:fragment="footer">
 
     <div class="container">
-
-        <footer>
-        <!-- this is footer -->
-
-          <h1>Hi, i'm footer</h1>
-        <script type="text/javascript" src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
-
+        <!--<script type="text/javascript" src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>-->
+        <footer class="text-muted">
+            <div class="container">
+                <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>
+            </div>
+            <script th:src="@{/webjars/jquery/3.1.1/jquery.min.js}"></script>
+            <script th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
         </footer>
     </div>
 
